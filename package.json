@@ -9,7 +9,7 @@
 		"api"
 	],
 	"dependencies": {
-		"@freecodecamp/example": "1.2.13",
+		"@freecodecamp/example": "~1.2.13",
 		"express": "^4.14.0"
 	},
 	"main": "server.js",
