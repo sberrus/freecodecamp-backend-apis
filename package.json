@@ -2,13 +2,14 @@
 	"author": "samdev",
 	"name": "fcc-learn-npm-package-json",
 	"description": "This is a project for Freecodecamp",
-	"version":"1.0.0",
+	"version": "1.0.0",
 	"keywords": [
 		"freecodecamp",
 		"backend",
 		"api"
 	],
 	"dependencies": {
+		"@freecodecamp/example": "1.1.0",
 		"express": "^4.14.0"
 	},
 	"main": "server.js",
