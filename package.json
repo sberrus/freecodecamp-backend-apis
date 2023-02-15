@@ -2,7 +2,11 @@
 	"author": "samdev",
 	"name": "fcc-learn-npm-package-json",
 	"description": "This is a project for Freecodecamp",
-	"keywords": [ "freecodecamp", "backend", "api" ],
+	"keywords": [
+		"freecodecamp",
+		"backend",
+		"api"
+	],
 	"dependencies": {
 		"express": "^4.14.0"
 	},
@@ -13,5 +17,6 @@
 	"repository": {
 		"type": "git",
 		"url": "https://idontknow/todo.git"
-	}
+	},
+	"license": "MIT"
 }
