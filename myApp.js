@@ -1,76 +1,70 @@
-// imports
-require("dotenv").config();
-require("dotenv").config();
-require("body-parser");
-const bodyParser = require("body-parser");
-let express = require("express");
-let app = express();
+require('dotenv').config();
 
-// use body parser to decode multiform/post-data
-app.use(bodyParser.urlencoded({ extended: false }));
-// log incoming request information Middleware
-app.use((req, res, next) => {
-	const path = req.path;
-	const method = req.method;
-	const ip = req.ip;
 
-	console.log(`${method} ${path} - ${ip}`);
+let Person;
 
-	next();
-});
+const createAndSavePerson = (done) => {
+  done(null /*, data*/);
+};
 
-// serve static files
-app.use("/public", express.static(__dirname + "/public"));
+const createManyPeople = (arrayOfPeople, done) => {
+  done(null /*, data*/);
+};
 
-// serve index html file
-app.get("/", function (req, res) {
-	res.sendFile(__dirname + "/views/index.html");
-});
+const findPeopleByName = (personName, done) => {
+  done(null /*, data*/);
+};
 
-// serve a basic response using envoirement variables to change behaviour of response
-app.get("/json", function (req, res) {
-	if (process.env.MESSAGE_STYLE === "uppercase") {
-		res.json({ message: "Hello json".toUpperCase() });
-	} else {
-		res.json({ message: "Hello json" });
-	}
-});
+const findOneByFood = (food, done) => {
+  done(null /*, data*/);
+};
 
-// Get a timestamp when requesting this route
-app.get(
-	"/now",
-	(req, res, next) => {
-		req.time = new Date().toString();
-		next();
-	},
-	(req, res) => {
-		res.json({ time: req.time });
-	}
-);
+const findPersonById = (personId, done) => {
+  done(null /*, data*/);
+};
 
-// get the information passed as url params
-app.get("/:word/echo", (req, res) => {
-	const word = req.params["word"];
+const findEditThenSave = (personId, done) => {
+  const foodToAdd = "hamburger";
 
-	//
-	return res.json({ echo: word });
-});
+  done(null /*, data*/);
+};
 
-// get query information
-app.route("/name")
-	// get handler
-	.get((req, res) => {
-		const firstname = req.query["first"];
-		const lastname = req.query["last"];
+const findAndUpdate = (personName, done) => {
+  const ageToSet = 20;
 
-		res.json({ name: firstname + " " + lastname });
-	})
-	.post((req, res) => {
-		const firstname = req.body["first"];
-		const lastname = req.body["last"];
+  done(null /*, data*/);
+};
 
-		res.json({ name: firstname + " " + lastname });
-	});
+const removeById = (personId, done) => {
+  done(null /*, data*/);
+};
 
-// export
-module.exports = app;
+const removeManyPeople = (done) => {
+  const nameToRemove = "Mary";
+
+  done(null /*, data*/);
+};
+
+const queryChain = (done) => {
+  const foodToSearch = "burrito";
+
+  done(null /*, data*/);
+};
+
+/** **Well Done !!**
+/* You completed these challenges, let's go celebrate !
+ */
+
+//----- **DO NOT EDIT BELOW THIS LINE** ----------------------------------
+
+exports.PersonModel = Person;
+exports.createAndSavePerson = createAndSavePerson;
+exports.findPeopleByName = findPeopleByName;
+exports.findOneByFood = findOneByFood;
+exports.findPersonById = findPersonById;
+exports.findEditThenSave = findEditThenSave;
+exports.findAndUpdate = findAndUpdate;
+exports.createManyPeople = createManyPeople;
+exports.removeById = removeById;
+exports.removeManyPeople = removeManyPeople;
+exports.queryChain = queryChain;
