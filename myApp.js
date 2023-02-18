@@ -1,9 +1,13 @@
 // imports
+require("dotenv").config();
+require("dotenv").config();
+require("body-parser");
+const bodyParser = require("body-parser");
 let express = require("express");
-require("dotenv").config();
 let app = express();
-require("dotenv").config();
 
+// use body parser to decode multiform/post-data
+app.use(bodyParser.urlencoded({ extended: false }));
 // log incoming request information Middleware
 app.use((req, res, next) => {
 	const path = req.path;
