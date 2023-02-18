@@ -66,7 +66,10 @@ app.route("/name")
 		res.json({ name: firstname + " " + lastname });
 	})
 	.post((req, res) => {
-		res.json({ ok: true });
+		const firstname = req.body["first"];
+		const lastname = req.body["last"];
+
+		res.json({ name: firstname + " " + lastname });
 	});
 
 // export
