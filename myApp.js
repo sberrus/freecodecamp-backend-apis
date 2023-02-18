@@ -52,5 +52,18 @@ app.get("/:word/echo", (req, res) => {
 	return res.json({ echo: word });
 });
 
+// get query information
+app.route("/name")
+	// get handler
+	.get((req, res) => {
+		const firstname = req.query["first"];
+		const lastname = req.query["last"];
+
+		res.json({ name: firstname + " " + lastname });
+	})
+	.post((req, res) => {
+		res.json({ ok: true });
+	});
+
 // export
 module.exports = app;
