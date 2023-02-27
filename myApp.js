@@ -19,6 +19,7 @@ const personSchema = new Schema({
 let Person = new mongoose.model("Person", personSchema);
 
 const createAndSavePerson = (done) => {
+	// Insert only one document with data following its schema data structure.
 	const person = new Person({
 		name: "Jhon",
 		age: 25,
@@ -31,7 +32,12 @@ const createAndSavePerson = (done) => {
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
-	done(null /*, data*/);
+	// Insert a group of documents using the Model.create() function that pass in the params an array of
+	// objects following the structure of it model schema.
+
+	Person.create(arrayOfPeople).then((data) => {
+		done(null, data);
+	});
 };
 
 const findPeopleByName = (personName, done) => {
