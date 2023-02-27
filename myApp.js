@@ -25,8 +25,9 @@ const createAndSavePerson = (done) => {
 		favoriteFoods: ["pizza", "hot dogs"],
 	});
 
-	person.save((err, data) => {});
-	done(null /*, data*/);
+	person.save((err, data) => {
+		done(null, data);
+	});
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
